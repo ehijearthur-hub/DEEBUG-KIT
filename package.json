@@ -1,0 +1,16 @@
+{
+   "name": "deebug kit",
+   "version": "1.0.0",
+   "description": "",
+   "scripts": {
+      "start": "node index.js",
+      "dev": "nodemon index.js"
+   },
+   "main": "index.js",
+   "dependencies": {
+      "dotenv": "^17.4.2",
+      "express": "^5.2.1",
+      "module": "^2.0.0",
+      "mongoose": "^9.5.0"
+   }
+}

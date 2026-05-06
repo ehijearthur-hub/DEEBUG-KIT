@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 const staffSchema = new Schema ({
     fullname: String,
     email: String,
+    password: String,
     role: { type: String,
         enum: ["Staff", "Manager", "Admin"]
     }, 

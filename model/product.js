@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const { images } = require('../utils/cloudinary')
 const Schema = mongoose.Schema
 
-const userSchema = new Schema ({
+const productSchema = new Schema ({
     rating: {default: 0}, Number,
     category: String,
     products: [{
@@ -12,7 +12,7 @@ const userSchema = new Schema ({
     }],
     description: String,
     timestamp: Date,
-}, {collection: 'User'})
+}, {collection: 'Product'})
 
-const model = mongoose.model('User', userschema)
+const model = mongoose.model('Product', productschema)
 module.exports = model

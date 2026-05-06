@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 const express = require('express');
-const dotenv = require('dotenv')
-dotenv.config()
+const dotenv = require('dotenv');
+const cors = require('cors');
 
-const app = express()
+// load env vars 
+dotenv.config()
 
 mongoose.connect(process.env.MONGO_URI)
 const connection = mongoose.connection
@@ -15,12 +16,18 @@ connection.on('open', error =>{
     }
 })
 
+const app = express()
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(cors())
+
+// Routes 
+// app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/staffs', require('./routes/staffRoutes'));
+// app.use('/api/products', require('./routes/productRoutes'));
 
 const port = process.env.PORT
 app.listen(port , ()=> {
-    console.log(`server listening at port ${port}`);
+    console.log(`Server listening at port ${port}`);
 })
 
 module.exports = app

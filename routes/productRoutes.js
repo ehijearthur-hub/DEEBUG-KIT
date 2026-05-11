@@ -40,7 +40,7 @@ router.post('/create-product', async (req, res) =>{
 
 
 // Edit product 
-router.put('/edit-product/;id', async (req, res) => {
+router.put('/edit-product/:id', async (req, res) => {
     try{
         let updateData = { ...req.body };
     if (!product) const staff = await product.findByIdAndUpdate(req.params.id,
@@ -61,7 +61,7 @@ router.put('/edit-product/;id', async (req, res) => {
 
 
 // Delete products 
-router.delete('/delete-product/;id', async (req, res) => {
+router.delete('/delete-product/:id', async (req, res) => {
     try {
         console.log(req)
         const product = await product.findByIdAndDelete(req.params.id);

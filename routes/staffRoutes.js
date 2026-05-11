@@ -42,7 +42,7 @@ router.post('/create-staff', async (req, res) => {
 });
 
 // Edit staff 
-router.put('/edit-staff/;id', async (req, res) => {
+router.put('/edit-staff/:id', async (req, res) => {
     try{
     let updateData = { ...req.body };
     if (updateData.password) {
@@ -66,7 +66,7 @@ router.put('/edit-staff/;id', async (req, res) => {
 });
 
 // Delete staff 
-router.delete('/delete-staff/;id', async (req, res) => {
+router.delete('/delete-staff/:id', async (req, res) => {
     try {
         console.log(req)
         const staff = await Staff.findByIdAndDelete(req.params.id);
